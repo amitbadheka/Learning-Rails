@@ -1,0 +1,17 @@
+%h1 Listing Artciles
+%table
+  %tr 
+    %th Title
+    %th Text
+
+  - @article.each do |article|
+    %tr
+      %td= link_to article.title, article_path(article)
+      %td= article.text
+      %td= link_to 'Edit', edit_article_path(article), :class => 'btn btn-mini'
+      %td= link_to 'Delete',article_path(article), method: :delete, data: {confirm: 'Are you sure?'},:class => 'btn btn-mini btn-danger'
+
+
+= will_paginate @article, previous_label: h("<"), next_label: h(">")
+
+= link_to 'New article', new_article_path,:class => 'btn btn-primary'

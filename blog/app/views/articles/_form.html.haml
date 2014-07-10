@@ -1,0 +1,20 @@
+= form_for @article do |f|
+  %fieldset  
+    - if @article.errors.any? 
+      #error_explaination
+        %h2= pluralize(@article.errors.count, 'error') + " prevented the article to be saved"
+        %ul 
+        -@article.errors.full_messages.each do |msg|
+          %li= msg
+    .contol-group
+      = f.label :title, :class => 'control-label'
+      .controls
+        = f.text_field :title, :class => 'text_field'
+    .contol-group
+      = f.label :text, :class => 'control-label'
+      .controls
+      = f.text_field :text, :class => 'text_field'
+
+    .form-actions
+      = f.submit nil,  :class => 'btn btn-primary'
+      = link_to "Cancel", articles_path, :class => 'btn'
