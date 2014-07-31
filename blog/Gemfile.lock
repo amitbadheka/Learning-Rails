@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/amitbadheka/functions.git
+  revision: d43918e3767d4b274805343fac6504ef6590d98d
+  specs:
+    functions (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  functions!
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
